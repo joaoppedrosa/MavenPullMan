@@ -58,42 +58,72 @@
                             <div class="panel-heading">Resultados</div>
 
                             <!-- Table -->
-                            <table class="table">
+                            <table id="table" class="table">
                                 <tr> 
-                                    <th>Origem</th>
-                                    <th>Destino</th>
-                                    <th>Hora</th>
-                                    <th>Companhia</th>
-                                    <th>Reserva</th>
+                                    <th class="text-center">Origem</th>
+                                    <th class="text-center">Destino</th>
+                                    <th class="text-center">Hora</th>
+                                    <th class="text-center">Companhia</th>
+                                    <th class="text-center">Lugares Livres</th>
+                                    <th class="text-center">Preço</th>
+                                    <th class="text-center">Reserva</th>
                                 </tr>                
                                 <tr>
-                                    <td>Aveiro</td>
-                                    <td>Lisboa</td>
-                                    <td>19:00</td>
-                                    <td><img src="http://makeitpossible.aiesec.pt/images/parceiros/rede_expressos.png" class="img-rounded" width="100" height="50"></td>
-                                    <td>
+                                    <td class="text-center">Aveiro</td>
+                                    <td class="text-center">Lisboa</td>
+                                    <td class="text-center">19:00</td>
+                                    <td class="text-center"><img src="http://makeitpossible.aiesec.pt/images/parceiros/rede_expressos.png" class="img-rounded" width="100" height="50"></td>
+                                    <td class="text-center">4</td>
+                                    <td class="text-center">6,50 EUR</td>
+                                    <td class="text-center">
                                         <form method="post" action="Payment.jsp">
                                             <button  type="submit" class="btn btn-toolbar">Reservar</button></form>                        
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Aveiro</td>
-                                    <td>Lisboa</td>
-                                    <td>20:15</td>
-                                    <td><img src="http://www.adverta.co.uk/news/wp-content/uploads/2012/08/logo-transdev.jpg" class="img-rounded" width="100" height="50"></td>
-                                    <td>
+                                    <td class="text-center">Aveiro</td>
+                                    <td class="text-center">Lisboa</td>
+                                    <td class="text-center">20:15</td>
+                                    <td class="text-center"><img src="http://www.adverta.co.uk/news/wp-content/uploads/2012/08/logo-transdev.jpg" class="img-rounded" width="100" height="50"></td>
+                                    <td class="text-center">13</td>
+                                    <td class="text-center">5,00 EUR</td>
+                                    <td class="text-center">
                                         <form method="post" action="Payment.jsp">
                                             <button  type="submit" class="btn btn-toolbar">Reservar</button></form>                        
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Aveiro</td>
-                                    <td>Lisboa</td>
-                                    <td>22:00</td>
-                                    <td><img src="http://makeitpossible.aiesec.pt/images/parceiros/rede_expressos.png" class="img-rounded" width="100" height="50"></td>
-                                    <td>
+                                    <td class="text-center">Aveiro</td>
+                                    <td class="text-center">Lisboa</td>
+                                    <td class="text-center">22:00</td>
+                                    <td class="text-center"><img src="http://makeitpossible.aiesec.pt/images/parceiros/rede_expressos.png" class="img-rounded" width="100" height="50"></td>
+                                    <td class="text-center">1</td>
+                                    <td class="text-center">4,50 EUR</td>
+                                    <td class="text-center">
                                         <form method="post" action="Payment.jsp">
                                             <button  type="submit" class="btn btn-toolbar">Reservar</button></form>                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">Aveiro</td>
+                                    <td class="text-center">Lisboa</td>
+                                    <td class="text-center">22:00</td>
+                                    <td class="text-center"><img src="http://makeitpossible.aiesec.pt/images/parceiros/rede_expressos.png" class="img-rounded" width="100" height="50"></td>
+                                    <td class="text-center" id="sits">0</td>
+                                    <td class="text-center">4,50 EUR</td>
+                                    <td class="text-center">
+                                        <script>
+                                            function val()
+                                            {
+                                                var x = document.getElementById("sits").innerHTML;
+                                                if (x == 0)
+                                                {
+                                                    alert("Não existem lugares disponiveis neste autocarro!");
+                                                }
+                                            }
+                                        </script>
+                                        <form method="post" action="Payment.jsp">
+                                            <button id="rsv" onclick="val()" type="submit" class="btn btn-toolbar">Reservar</button></form>                        
                                     </td>
                                 </tr>
                             </table>
@@ -103,7 +133,7 @@
             </div>
         </div>
     </div>
-  
+
 
     <hr> 
     <div class="container">     

@@ -205,64 +205,90 @@
             <form class="form-horizontal" role="form">
                 <div>
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">Origem</label>
+                        <label class="col-sm-2 control-label">Origem: </label>
                         <div class="col-sm-10">
                             <select name="dataCombo" class="selectpicker">
                                 <option data-hidden="true">Escolha a Origem</option>
-                                 <%
-                String sql = "select distinct origin from TRIPS";
-                try {
-                    Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/sample", "app", "app");
-                    Statement s = con.createStatement();
-                    ResultSet rs = s.executeQuery(sql);
-                    while (rs.next()) {
-                        String cd = rs.getString(1);             
-            %>
-            <option value="<%out.println(cd);%>"><%out.println(cd);%></option>
-            <%
-                    }
-                    rs.close();
-                    s.close();
-                    con.close();
-                } catch (SQLException e) {
-                    out.println("con error");
-                }%>
+                                <%
+                                    String sql = "select distinct origin from TRIPS";
+                                    try {
+                                        Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/sample", "app", "app");
+                                        Statement s = con.createStatement();
+                                        ResultSet rs = s.executeQuery(sql);
+                                        while (rs.next()) {
+                                            String cd = rs.getString(1);
+                                %>
+                                <option value="<%out.println(cd);%>"><%out.println(cd);%></option>
+                                <%
+                                        }
+                                        rs.close();
+                                        s.close();
+                                        con.close();
+                                    } catch (SQLException e) {
+                                        out.println("con error");
+                                    }%>
                             </select>
                         </div>
                     </div>
                 </div> 
                 <div>
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">Destino</label>
+                        <label class="col-sm-2 control-label">Destino: </label>
                         <div class="col-sm-10">
                             <select id="dataCombo2" class="selectpicker">
                                 <option data-hidden="true">Escolha o Destino</option>
-                                
-                                 <%
-                String sql2 = "select distinct destination from TRIPS";
-                try {
-                    Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/sample", "app", "app");
-                    Statement s = con.createStatement();
-                    ResultSet rs = s.executeQuery(sql2);
-                    while (rs.next()) {
-                        String cd = rs.getString(1);             
-            %>
-            <option value="<%out.println(cd);%>"><%out.println(cd);%></option>
-            <%
-                    }
-                    rs.close();
-                    s.close();
-                    con.close();
-                } catch (SQLException e) {
-                    out.println("con error");
-                }%>
-                               
+
+                                <%
+                                    String sql2 = "select distinct destination from TRIPS";
+                                    try {
+                                        Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/sample", "app", "app");
+                                        Statement s = con.createStatement();
+                                        ResultSet rs = s.executeQuery(sql2);
+                                        while (rs.next()) {
+                                            String cd = rs.getString(1);
+                                %>
+                                <option value="<%out.println(cd);%>"><%out.println(cd);%></option>
+                                <%
+                                        }
+                                        rs.close();
+                                        s.close();
+                                        con.close();
+                                    } catch (SQLException e) {
+                                        out.println("con error");
+                                    }%>
+
                             </select>
                         </div>
                     </div>
                 </div>
+
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">Horário</label>
+                    <label class="col-sm-2 control-label">Extras: </label>
+                    <div class="col-sm-10">
+                        <div class="container">
+                            <div class="row">
+                                <div class='col-sm-6'>
+                                    <div class="form-group">
+                                        <div>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> WiFi
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" id="inlineCheckbox2" value="option2"> Ar Condicionado
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" id="inlineCheckbox3" value="option3"> Mobilidade Especial
+                                            </label>                                   
+                                        </div>
+                                    </div>
+                                </div>       
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Horário: </label>
                     <div class="col-sm-10">
                         <div class="container">
                             <div class="row">
